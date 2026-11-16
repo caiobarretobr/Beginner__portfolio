@@ -48,37 +48,49 @@ def calc():
             time.sleep(0.8)
             print("\n")
 
-    op = input("Digite a operação: ")
-    calc = ""
-    
-    match op:
-        case "+":
-            calc = f"{n1} + {n2} = {n1 + n2}"
-            store(calc)
-            time.sleep(0.9)
+    while True:
+        op = input("Digite a operação: ")
+
+        if op == "+" or op == "-" or op == "*" or op == "/" or op == "**":
+            break
+        else:
+            print("Digite um operador válido")
+            time.sleep(0.8)
             print("\n")
-        case "-":
-            calc = f"{n1} - {n2} = {n1 - n2}"
-            store(calc)
-            time.sleep(0.9)
-            print("\n")
-        case "*":
-            calc = f"{n1} * {n2} = {n1 * n2}"
-            store(calc)
-            time.sleep(0.9)
-            print("\n")
-        case "/":
-            calc = f"{n1} / {n2} = {n1 / n2:.2f}"
-            store(calc)
-            time.sleep(0.9)
-            print("\n")
-        case "**":
-            calc = f"{n1} ** {n2} = {n1 ** n2}"
-            store(calc)
-            time.sleep(0.9)
-            print("\n")
-        case _:
-            "Operação inválida"
+
+    if n1 == 0 and n2 == 0 and op == "/":
+        print("ERRO: Operação inválida")
+        time.sleep(0.8)
+        print("\n")
+    else:
+        match op:
+            case "+":
+                calc = f"{n1} + {n2} = {n1 + n2}"
+                store(calc)
+                time.sleep(0.9)
+                print("\n")
+            case "-":
+                calc = f"{n1} - {n2} = {n1 - n2}"
+                store(calc)
+                time.sleep(0.9)
+                print("\n")
+            case "*":
+                calc = f"{n1} * {n2} = {n1 * n2}"
+                store(calc)
+                time.sleep(0.9)
+                print("\n")
+            case "/":
+                calc = f"{n1} / {n2} = {n1 / n2:.2f}"
+                store(calc)
+                time.sleep(0.9)
+                print("\n")
+            case "**":
+                calc = f"{n1} ** {n2} = {n1 ** n2}"
+                store(calc)
+                time.sleep(0.9)
+                print("\n")
+            case _:
+                "Operação inválida"
 
 def history():
 

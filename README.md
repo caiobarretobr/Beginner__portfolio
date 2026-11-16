@@ -1,179 +1,467 @@
-Projeto 1: Calculadora de terminal com histórico
+<div align="center">
 
-O que faz: um programa em loop que pede dois números e uma operação (+, -, *, /, potência, resto), mostra o resultado e guarda um histórico das contas da sessão.
+# 🐍 Beginner Portfolio
 
-Conceitos testados: tipos e conversão, operadores, condicionais, while, funções com retorno, listas, f-strings.
+### Uma trilha prática para aprender lógica de programação com Python
 
-Requisitos:
+**9 projetos · Python puro · Do terminal à arquitetura de aplicações**
 
-Menu com opções: calcular, ver histórico, limpar histórico, sair
-Cada operação em uma função separada
-Divisão por zero e entrada inválida (texto no lugar de número) não podem quebrar o programa
-O histórico mostra as últimas 10 contas numeradas
+<p>
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.x">
+  <img src="https://img.shields.io/badge/Projetos-9-FFD43B?style=for-the-badge&logo=python&logoColor=306998" alt="9 projetos">
+  <img src="https://img.shields.io/badge/Foco-Lógica%20e%20boas%20práticas-2EA44F?style=for-the-badge" alt="Foco em lógica e boas práticas">
+</p>
 
-Critérios de aceitação: o programa só termina quando escolho sair, nenhuma entrada errada gera traceback, e não há código repetido entre as operações.
+> Uma bateria de projetos para praticar fundamentos de Python de forma progressiva.
+> A inspiração pode vir de ferramentas de IA, mas o código é escrito à mão para
+> desenvolver raciocínio, autonomia e confiança.
 
-Extras: operação com resultado anterior (“usar último resultado”); formatar números com 2 casas decimais.
+</div>
 
-Por onde começar: escreva primeiro as funções das operações, testando cada uma isolada, e só depois monte o menu.
+<br>
 
-Projeto 2: Jogo de adivinhação com placar
+## 🧭 Navegação
 
-O que faz: o computador sorteia um número e o jogador tenta acertar, com dicas de “maior” ou “menor”. Há níveis de dificuldade e um placar dos melhores jogadores.
+| Etapa | Projetos | Habilidades principais |
+| :---: | :--- | :--- |
+| 🌱 **Fundamentos** | [01 Calculadora](#-01--calculadora-de-terminal) · [02 Jogo de adivinhação](#-02--jogo-de-adivinhação) · [03 Agenda](#-03--agenda-de-contatos) | Lógica, funções, coleções e validação |
+| 🧰 **Dados e arquivos** | [04 Controle financeiro](#-04--controle-financeiro) · [05 Analisador de texto](#-05--analisador-de-texto) | JSON, CSV, arquivos e manipulação de dados |
+| 🏗️ **Orientação a objetos** | [06 Estoque](#-06--sistema-de-estoque) · [07 Banco](#-07--banco-simplificado) | OOP, herança, polimorfismo e persistência |
+| ✅ **Qualidade e integração** | [08 Testes](#-08--testes-e-refatoração) · [09 Tarefas CLI](#-09--gerenciador-de-tarefas-cli) | pytest, arquitetura e projeto integrador |
 
-Conceitos testados: random, laços com break, dicionários, ordenação, strings, funções.
+---
 
-Requisitos:
+## ✨ Sobre esta trilha
 
-3 níveis (faixas e número de tentativas diferentes)
-Placar em um dicionário {nome: melhor_pontuação}, exibido ordenado
-Validação de entrada (nada de letras, nada fora da faixa)
-Pergunta se quer jogar de novo
+Este repositório reúne **9 desafios práticos**, organizados para aumentar a
+complexidade aos poucos. Cada projeto apresenta:
 
-Critérios de aceitação: a lógica do jogo fica separada da lógica de exibição (funções diferentes) e o placar só atualiza quando a pontuação melhora.
+- 🎯 um problema realista para resolver;
+- 🧠 conceitos de Python para praticar;
+- 📋 requisitos objetivos;
+- ✅ critérios para saber quando a implementação está pronta;
+- 🚀 extras opcionais para ir além;
+- 🗺️ um primeiro passo para começar sem travar.
 
-Extras: pontuação que considera tentativas e dificuldade; modo “o computador tenta adivinhar o meu número”.
+> **Princípio da trilha:** primeiro faça funcionar, depois organize, teste e
+> explique as decisões tomadas.
 
-Por onde começar: monte o jogo de uma rodada com um número fixo, sem sorteio, e só depois adicione os níveis e o placar.
+---
 
-Projeto 3: Agenda de contatos
+## 🌱 Fundamentos
 
-O que faz: cadastra, busca, edita e remove contatos (nome, telefone, e-mail, categoria) mantidos em memória.
+### 🧮 01 · Calculadora de terminal
 
-Conceitos testados: lista de dicionários, funções com parâmetros, list comprehension, busca e filtro, ordenação com key, tratamento de duplicatas.
+> Uma calculadora em loop com histórico das operações da sessão.
 
-Requisitos:
+<details>
+<summary><strong>Ver escopo do projeto</strong></summary>
 
-Cadastro com validação (telefone só com dígitos, e-mail com @)
-Busca por trecho do nome, sem diferenciar maiúsculas de minúsculas
-Listagem filtrada por categoria e ordenada por nome
-Impedir contatos duplicados
+**O que faz**
 
-Critérios de aceitação: nenhuma função mistura input com lógica de dados (funções que recebem parâmetros e retornam valores, sem input dentro) e há pelo menos 2 comprehensions bem aplicadas.
+Recebe dois números e uma operação (`+`, `-`, `*`, `/`, potência ou resto),
+exibe o resultado e guarda as últimas contas realizadas.
 
-Extras: exportar a agenda formatada em texto; agrupar contatos por categoria com dicionário de listas.
+**Conceitos praticados**
 
-Por onde começar: defina a estrutura de dados no papel (como é um contato, como é a agenda) antes de escrever qualquer função.
+Tipos e conversão · operadores · condicionais · `while` · funções com retorno ·
+listas · f-strings
 
-Projeto 4: Controle financeiro com arquivos
+**Requisitos**
 
-O que faz: registra receitas e despesas com data, valor, categoria e descrição, salva em arquivo e gera um resumo mensal.
+- Menu com as opções: calcular, ver histórico, limpar histórico e sair.
+- Cada operação deve estar em uma função separada.
+- Divisão por zero e entradas inválidas não podem quebrar o programa.
+- O histórico deve mostrar as últimas 10 contas numeradas.
 
-Conceitos testados: leitura e escrita de JSON e CSV, datetime, try/except/finally, módulos próprios (import de arquivos seus), agregação de dados.
+**Critérios de aceitação**
 
-Requisitos:
+O programa só termina quando a opção “sair” é escolhida, entradas incorretas
+não geram traceback e não existe código repetido entre as operações.
 
-Dados persistem entre execuções (JSON como armazenamento principal)
-Exportação do extrato de um mês para CSV
-Resumo mensal: total de receitas, despesas, saldo e gasto por categoria
-Arquivo inexistente ou corrompido não derruba o programa
-Código dividido em pelo menos 3 arquivos (ex.: armazenamento.py, relatorios.py, main.py)
+**Extras**
 
-Critérios de aceitação: fechar e abrir o programa mantém tudo, datas inválidas são rejeitadas com mensagem clara e o valor monetário não sofre erros visíveis de arredondamento.
+Usar o último resultado em uma nova conta e formatar números com duas casas
+decimais.
 
-Extras: filtro por intervalo de datas; meta de gasto mensal com alerta.
+**Por onde começar**
 
-Por onde começar: faça primeiro só a persistência (salvar e carregar uma lista de dicionários), depois construa as funcionalidades em cima.
+Escreva e teste primeiro as funções das operações isoladamente. Só depois monte
+o menu.
 
-Projeto 5: Analisador de texto
+</details>
 
-O que faz: lê um arquivo .txt e gera estatísticas: total de palavras, palavras mais frequentes, tamanho médio das palavras, palavras únicas e linhas mais longas.
+### 🎲 02 · Jogo de adivinhação
 
-Conceitos testados: manipulação de strings, set, collections.Counter/defaultdict, pathlib, *args/**kwargs, comprehensions, funções reutilizáveis.
+> Um jogo de tentativas com dicas, níveis de dificuldade e placar.
 
-Requisitos:
+<details>
+<summary><strong>Ver escopo do projeto</strong></summary>
 
-Normalização do texto (minúsculas, remoção de pontuação)
-Lista de “stop words” configurável para ignorar palavras como “de”, “a”, “o”
-Uma função de relatório que aceita opções via **kwargs (ex.: top=10, min_tamanho=4)
-Resultado salvo em um arquivo de saída
+**O que faz**
 
-Critérios de aceitação: funciona com qualquer arquivo de texto, trata o caso de arquivo vazio ou inexistente, e a normalização está isolada em uma função própria.
+O computador sorteia um número e o jogador tenta acertá-lo recebendo dicas de
+“maior” ou “menor”.
 
-Extras: comparar dois textos (palavras em comum e exclusivas usando operações de set); contar frases.
+**Conceitos praticados**
 
-Por onde começar: teste a normalização com 3 ou 4 frases escritas à mão antes de ler arquivos.
+`random` · laços com `break` · dicionários · ordenação · strings · funções
 
-Projeto 6: Sistema de estoque (OOP básica)
+**Requisitos**
 
-O que faz: controla produtos, quantidades e preços com entradas e saídas de estoque.
+- Três níveis com faixas numéricas e limites de tentativas diferentes.
+- Placar em um dicionário `{nome: melhor_pontuação}`, exibido em ordem.
+- Validação de entrada: nada de letras ou números fora da faixa.
+- Perguntar ao jogador se deseja jogar novamente.
 
-Conceitos testados: classes e objetos, atributos e métodos, encapsulamento (@property), __str__/__repr__, exceções customizadas, type hints, docstrings.
+**Critérios de aceitação**
 
-Requisitos:
+A lógica do jogo deve ser separada da lógica de exibição. O placar só deve ser
+atualizado quando a pontuação melhorar.
 
-Classe Produto (nome, preço, quantidade) com validações via @property (preço não negativo, quantidade inteira)
-Classe Estoque que gerencia a coleção de produtos
-Exceções próprias, como EstoqueInsuficienteError e ProdutoNaoEncontradoError
-Relatório de produtos abaixo de um estoque mínimo e valor total em estoque
-Persistência em JSON (converter objetos para dicionários e vice-versa)
+**Extras**
 
-Critérios de aceitação: nenhum atributo é alterado “por fora” de forma inválida, as exceções são levantadas e tratadas em lugares diferentes, e todos os métodos públicos têm type hints.
+Pontuação considerando tentativas e dificuldade; modo em que o computador tenta
+adivinhar o número escolhido pelo jogador.
 
-Extras: __eq__ e __lt__ para comparar produtos; @classmethod para criar produto a partir de dicionário.
+**Por onde começar**
 
-Por onde começar: escreva só a classe Produto e teste no terminal interativo antes de criar Estoque.
+Monte uma rodada com um número fixo, sem sorteio. Depois adicione níveis e
+placar.
 
-Projeto 7: Banco simplificado (OOP avançada)
+</details>
 
-O que faz: simula contas bancárias com tipos diferentes, operações e extrato.
+### 📇 03 · Agenda de contatos
 
-Conceitos testados: herança, polimorfismo, classes abstratas (abc), composição, super(), @staticmethod/@classmethod, persistência de objetos.
+> Um CRUD em memória para organizar contatos por categoria.
 
-Requisitos:
+<details>
+<summary><strong>Ver escopo do projeto</strong></summary>
 
-Classe base abstrata Conta com depositar, sacar e extrato
-Pelo menos duas subclasses (ex.: ContaCorrente com limite de cheque especial e ContaPoupanca com rendimento mensal), cada uma com regra de saque própria
-Classe Cliente que possui várias contas (composição)
-Classe Transacao registrando cada movimentação com data
-Transferência entre contas, atômica (se falhar, nada muda)
-Persistência em JSON de clientes, contas e transações
+**O que faz**
 
-Critérios de aceitação: o mesmo código que percorre uma lista de contas chama sacar() sem saber o tipo (polimorfismo real), e não há if tipo == ... espalhado pelo código.
+Cadastra, busca, edita e remove contatos com nome, telefone, e-mail e categoria.
 
-Extras: __iter__ no extrato; relatório de saldo total do cliente.
+**Conceitos praticados**
 
-Por onde começar: desenhe o diagrama de classes (nome, atributos, métodos, relações) em papel antes de codar.
+Lista de dicionários · funções com parâmetros · list comprehensions · busca e
+filtro · ordenação com `key` · tratamento de duplicatas
 
-Projeto 8: Testes e refatoração do Projeto 7
+**Requisitos**
 
-O que faz: não é um programa novo. Você pega o Projeto 7 e o torna profissional.
+- Validar cadastro: telefone apenas com dígitos e e-mail com `@`.
+- Buscar por trecho do nome sem diferenciar maiúsculas de minúsculas.
+- Listar por categoria e ordenar por nome.
+- Impedir contatos duplicados.
 
-Conceitos testados: pytest, fixtures simples, venv, pip, requirements.txt, PEP 8, docstrings, estrutura de pacote.
+**Critérios de aceitação**
 
-Requisitos:
+Nenhuma função deve misturar `input` com a lógica de dados. Use funções que
+recebem parâmetros, retornam valores e tenha pelo menos duas comprehensions bem
+aplicadas.
 
-Ambiente virtual criado e requirements.txt gerado
-Mínimo de 15 testes cobrindo: depósito, saque válido, saque inválido, limites, transferência e persistência
-Testes de exceções (pytest.raises)
-Código reorganizado em pacote (banco/ com módulos separados)
-Verificação de estilo com ruff ou flake8 sem erros
+**Extras**
 
-Critérios de aceitação: pytest passa limpo, um colega consegue clonar e rodar com 3 comandos, e você encontrou e corrigiu pelo menos 1 bug que os testes revelaram.
+Exportar a agenda formatada em texto e agrupar contatos por categoria em um
+dicionário de listas.
 
-Extras: medir cobertura com pytest-cov e chegar a 85% ou mais.
+**Por onde começar**
 
-Por onde começar: escreva os testes das funções mais simples primeiro (depósito) para pegar o ritmo.
+Defina no papel a estrutura de um contato e da agenda antes de escrever as
+funções.
 
-Projeto 9: Gerenciador de tarefas CLI (integrador)
+</details>
 
-O que faz: um aplicativo de linha de comando para gerenciar tarefas com prioridade, prazo, tags e status.
+---
 
-Conceitos testados: tudo que veio antes, num único projeto estruturado.
+## 🧰 Dados e arquivos
 
-Requisitos:
+### 💰 04 · Controle financeiro
 
-Interface via argparse (ex.: tarefas add "Estudar" --prioridade alta --prazo 2026-12-01, tarefas listar --status pendente, tarefas concluir 3)
-OOP com pelo menos 3 classes (ex.: Tarefa, GerenciadorTarefas, Repositorio), com o repositório isolando a persistência
-Persistência em JSON, com a camada de armazenamento trocável (sem a lógica de negócio saber como se salva)
-Prazos com datetime, destacando tarefas vencidas
-Filtros e ordenação por prioridade, prazo e tag
-Tratamento de erros com mensagens amigáveis (sem traceback para o usuário)
-Estrutura de pacote, venv, requirements.txt, README com exemplos de uso
-Mínimo de 20 testes com pytest
+> Receitas, despesas e resumo mensal com persistência em arquivos.
 
-Critérios de aceitação: instalação e uso documentados no README, cobertura de testes nas regras de negócio, código em PEP 8 com type hints e docstrings, e você consegue explicar cada decisão de design.
+<details>
+<summary><strong>Ver escopo do projeto</strong></summary>
 
-Extras: tarefas recorrentes; exportar relatório semanal em Markdown; um segundo repositório (SQLite) trocando só uma linha de código.
+**O que faz**
 
-Por onde começar: escreva o README primeiro, descrevendo como o programa será usado. Isso força a definir a interface antes de codar.
+Registra receitas e despesas com data, valor, categoria e descrição, salva os
+dados e gera um resumo mensal.
+
+**Conceitos praticados**
+
+JSON e CSV · `datetime` · `try/except/finally` · módulos próprios · agregação
+de dados
+
+**Requisitos**
+
+- Persistir dados entre execuções usando JSON como armazenamento principal.
+- Exportar o extrato de um mês para CSV.
+- Gerar total de receitas, despesas, saldo e gastos por categoria.
+- Não derrubar o programa quando o arquivo estiver ausente ou corrompido.
+- Dividir o código em pelo menos três arquivos, como
+  `armazenamento.py`, `relatorios.py` e `main.py`.
+
+**Critérios de aceitação**
+
+Fechar e abrir o programa mantém os dados, datas inválidas recebem uma mensagem
+clara e valores monetários não apresentam erros visíveis de arredondamento.
+
+**Extras**
+
+Filtro por intervalo de datas e meta de gasto mensal com alerta.
+
+**Por onde começar**
+
+Implemente primeiro apenas salvar e carregar uma lista de dicionários. Depois
+construa as funcionalidades em cima da persistência.
+
+</details>
+
+### 📝 05 · Analisador de texto
+
+> Estatísticas úteis a partir de qualquer arquivo `.txt`.
+
+<details>
+<summary><strong>Ver escopo do projeto</strong></summary>
+
+**O que faz**
+
+Lê um texto e calcula total de palavras, palavras mais frequentes, tamanho
+médio, palavras únicas e linhas mais longas.
+
+**Conceitos praticados**
+
+Strings · `set` · `collections.Counter`/`defaultdict` · `pathlib` ·
+`*args`/`**kwargs` · comprehensions · funções reutilizáveis
+
+**Requisitos**
+
+- Normalizar o texto com minúsculas e remoção de pontuação.
+- Manter uma lista configurável de stop words, como “de”, “a” e “o”.
+- Criar um relatório que aceite opções via `**kwargs`, como `top=10` e
+  `min_tamanho=4`.
+- Salvar o resultado em um arquivo de saída.
+
+**Critérios de aceitação**
+
+Funcionar com qualquer arquivo de texto, tratar arquivos vazios ou inexistentes
+e manter a normalização isolada em uma função própria.
+
+**Extras**
+
+Comparar dois textos para encontrar palavras comuns e exclusivas e contar
+frases.
+
+**Por onde começar**
+
+Teste a normalização com três ou quatro frases escritas à mão antes de ler
+arquivos.
+
+</details>
+
+---
+
+## 🏗️ Orientação a objetos
+
+### 📦 06 · Sistema de estoque
+
+> Produtos, movimentações e relatórios usando OOP básica.
+
+<details>
+<summary><strong>Ver escopo do projeto</strong></summary>
+
+**O que faz**
+
+Controla produtos, quantidades e preços por meio de entradas e saídas de
+estoque.
+
+**Conceitos praticados**
+
+Classes e objetos · atributos e métodos · encapsulamento com `@property` ·
+`__str__`/`__repr__` · exceções customizadas · type hints · docstrings
+
+**Requisitos**
+
+- Criar `Produto` com nome, preço e quantidade validados por `@property`.
+- Criar `Estoque` para gerenciar a coleção de produtos.
+- Usar exceções próprias, como `EstoqueInsuficienteError` e
+  `ProdutoNaoEncontradoError`.
+- Gerar relatório de produtos abaixo do mínimo e do valor total em estoque.
+- Persistir em JSON, convertendo objetos para dicionários e vice-versa.
+
+**Critérios de aceitação**
+
+Nenhum atributo pode ser alterado externamente de forma inválida. Exceções
+devem ser levantadas e tratadas em lugares diferentes, e todo método público
+deve ter type hints.
+
+**Extras**
+
+Implementar `__eq__`, `__lt__` e um `@classmethod` para criar produtos a partir
+de dicionários.
+
+**Por onde começar**
+
+Escreva apenas `Produto` e teste no terminal interativo antes de criar
+`Estoque`.
+
+</details>
+
+### 🏦 07 · Banco simplificado
+
+> Contas, transações e transferências com OOP avançada.
+
+<details>
+<summary><strong>Ver escopo do projeto</strong></summary>
+
+**O que faz**
+
+Simula contas bancárias de tipos diferentes, operações financeiras e extratos.
+
+**Conceitos praticados**
+
+Herança · polimorfismo · classes abstratas com `abc` · composição · `super()` ·
+`@staticmethod`/`@classmethod` · persistência de objetos
+
+**Requisitos**
+
+- Criar a classe abstrata `Conta` com depositar, sacar e extrato.
+- Criar pelo menos duas subclasses, como `ContaCorrente` e `ContaPoupanca`,
+  cada uma com sua regra de saque.
+- Criar `Cliente` com várias contas e `Transacao` com data.
+- Implementar transferência atômica: se falhar, nada muda.
+- Persistir clientes, contas e transações em JSON.
+
+**Critérios de aceitação**
+
+O mesmo código deve percorrer contas e chamar `sacar()` sem conhecer o tipo
+concreto. Não espalhe condicionais `if tipo == ...` pelo código.
+
+**Extras**
+
+Implementar `__iter__` no extrato e um relatório do saldo total do cliente.
+
+**Por onde começar**
+
+Desenhe o diagrama de classes (atributos, métodos e relações) antes de codar.
+
+</details>
+
+---
+
+## ✅ Qualidade e integração
+
+### 🧪 08 · Testes e refatoração
+
+> Transforme o Projeto 7 em uma aplicação mais profissional.
+
+<details>
+<summary><strong>Ver escopo do projeto</strong></summary>
+
+**O que faz**
+
+Não é um programa novo: refatora o banco simplificado, cria testes e organiza
+o código como um pacote Python.
+
+**Conceitos praticados**
+
+`pytest` · fixtures · `venv` · `pip` · `requirements.txt` · PEP 8 · docstrings ·
+estrutura de pacote
+
+**Requisitos**
+
+- Criar ambiente virtual e gerar `requirements.txt`.
+- Escrever no mínimo 15 testes para depósitos, saques, limites,
+  transferências e persistência.
+- Testar exceções com `pytest.raises`.
+- Reorganizar o código em um pacote `banco/`.
+- Passar na verificação de estilo com Ruff ou Flake8.
+
+**Critérios de aceitação**
+
+O pytest passa limpo, outra pessoa consegue clonar e executar o projeto com
+três comandos e pelo menos um bug é encontrado e corrigido pelos testes.
+
+**Extras**
+
+Medir cobertura com `pytest-cov` e alcançar 85% ou mais.
+
+**Por onde começar**
+
+Escreva primeiro os testes das operações simples, como depósito, para ganhar
+ritmo.
+
+</details>
+
+### 📋 09 · Gerenciador de tarefas CLI
+
+> O projeto integrador da trilha: uma aplicação de linha de comando completa.
+
+<details>
+<summary><strong>Ver escopo do projeto</strong></summary>
+
+**O que faz**
+
+Gerencia tarefas com prioridade, prazo, tags e status por meio de uma
+interface de terminal.
+
+**Requisitos**
+
+- Usar `argparse`, por exemplo:
+  `tarefas add "Estudar" --prioridade alta --prazo 2026-12-01`.
+- Implementar pelo menos `Tarefa`, `GerenciadorTarefas` e `Repositorio`.
+- Isolar persistência em JSON e permitir trocar a camada de armazenamento.
+- Trabalhar com prazos usando `datetime` e destacar tarefas vencidas.
+- Filtrar e ordenar por prioridade, prazo e tag.
+- Exibir mensagens amigáveis, sem traceback para o usuário.
+- Usar estrutura de pacote, `venv`, `requirements.txt`, README e exemplos.
+- Escrever no mínimo 20 testes com pytest.
+
+**Critérios de aceitação**
+
+Instalação e uso documentados, regras de negócio cobertas por testes, código
+seguindo PEP 8 com type hints e docstrings, e decisões de design explicáveis.
+
+**Extras**
+
+Tarefas recorrentes, exportação semanal em Markdown e um segundo repositório
+SQLite que possa substituir o atual trocando apenas uma linha de código.
+
+**Por onde começar**
+
+Escreva o README antes do programa, descrevendo como ele será usado. Isso
+ajuda a definir a interface antes da implementação.
+
+</details>
+
+---
+
+## 🛠️ Como usar
+
+Clone o repositório e entre na pasta do projeto:
+
+```bash
+git clone https://github.com/caiobarretobr/Beginner__portfolio.git
+cd Beginner__portfolio
+```
+
+Execute o projeto atual de calculadora:
+
+```bash
+python -m calc_python
+```
+
+> Os demais projetos entram na trilha conforme forem implementados. Cada um
+> deve ter suas próprias instruções de instalação, execução e testes.
+
+---
+
+<div align="center">
+
+### 🚀 Aprender construindo é o objetivo
+
+Feito para praticar um conceito por vez, evoluir o código com intenção e
+transformar dúvidas em pequenos projetos funcionais.
+
+</div>
